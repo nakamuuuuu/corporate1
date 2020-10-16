@@ -25,3 +25,9 @@ section{
   margin: auto;
   font-size: 20pxpx;
 }
+.list{
+  display: flex;
+}
+label{
+  margin-right:10px ;
+}

@@ -6,30 +6,30 @@
   $comments = htmlspecialchars($_POST['comments']);
 
   if ($firm == '') {
-    $firm_result = '会社名が入力されていません。';
+    $firm_result = '入力されていません。';
   } else {
-    $firm_result = '会社名：' . $firm ;
+    $firm_result =  $firm ;
   }
   if ($name == '') {
-    $name_result = '氏名が入力されていません。';
+    $name_result = '入力されていません。';
   } else {
-    $name_result = '氏名：' . $name.'様';
+    $name_result =  $name.'様';
   }
   if ($phone == '') {
-    $phone_result = '電話番号が入力されていません。';
+    $phone_result = '入力されていません。';
   } else {
-    $phone_result = '電話番号：' . $phone;
+    $phone_result =  $phone;
   }
   if ($mail == '') {
-    $mail_result = 'メールアドレスが入力されていません。';
+    $mail_result = '入力されていません。';
   } else {
-    $mail_result = 'メールアドレス：' . $mail;
+    $mail_result =  $mail;
   }
   // お問い合わせ内容
   if ($comments == '') {
-    $comments_result = 'お問い合わせ内容が入力されていません。';
+    $comments_result = '入力されていません。';
   } else {
-    $comments_result = 'お問い合わせ内容：' . $comments;
+    $comments_result =  $comments;
   }
 
 ?>
@@ -42,29 +42,37 @@
     </head>
     <body>
       <section>
-        <div class="confirm">
-      <h1>お問い合わせ内容の確認</h1>
+      <div class="form">
+      <h1>お問い合わせ内容確認</h1>
       <p>お問い合わせ内容はこちらで宜しいでしょうか？<br>
          よろしければ「送信する」ボタンを押して下さい。</p>
-         </div>
-         <div class="confirm-contain">
-      <p><?php echo $firm_result; ?></p>
-      <p><?php echo $name_result; ?></p>
-      <p><?php echo $phone_result; ?></p>
-      <p><?php echo $mail_result; ?></p>
-      <p><?php echo $comments_result; ?></p>
-      <form method="post" action="thanks.php">
-
-          <input type="hidden" name="nickname" value="<?php echo $nickname; ?>">
-          <input type="hidden" name="email" value="<?php echo $email; ?>">
-          <input type="hidden" name="content" value="<?php echo $content; ?>">
-
-          <input type="button" onclick="history.back()" value="戻る">
-          <?php if ($nickname != '' && $email != '' && $content != ''): ?>
-            <input type="submit" value="OK">
-          <?php endif; ?>
-      </form>
       </div>
+      <div class="list">
+                    <label>会社名</label>
+                    <p><?php echo $firm_result; ?></p>
+                </div>
+                <div class="list">
+                    <label>氏名</label>
+                    <p><?php echo $name_result; ?></p>
+                </div>
+                <div class="list">
+                    <label>電話番号</label>
+                    <p><?php echo $phone_result; ?></p>
+                </div>
+                <div class="list">
+                    <label>メールアドレス</label>
+                    <p><?php echo $mail_result; ?></p>
+                </div>
+                <div class="list">
+                    <label>お問い合わせ内容</label>
+                    <p><?php echo $comments_result ?></p>
+                </div>
+              
+            </div>
+        <input type="button" value="内容を修正する" onclick="history.back(-1)">
+        <button type="submit" name="submit">送信する</button>
+    </form>
+</div>
       </section>
     </body>
     </html>
