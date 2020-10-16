@@ -5,26 +5,29 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
       <link rel="stylesheet" href="./style.css">
+      <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     </head>
     <body>
     <header>
       <div class="header-left">
-      <div class="logo">SITENAME</div>
+      <div class="logo"><i class="far fa-smile"></i>SMILING</div>
       </div>
       <div class="header-right">
+      <nav>
     <ul>
-      <li><a href="#home">home</li>
-      <li><a href="#feature">feature</li>
-      <li><a href="#access">access</li>
-      <li><a href="#news">news</li>
-      <li><a href="#contact">contact</li>
-    </ul>
+      <li><a class="menu"href="#home">home</a></li>
+      <li><a class="menu"href="#feature">feature</a></li>
+      <li><a class="menu"href="#access">access</a></li>
+      <li><a class="menu"href="#news">news</a></li>
+      <li><a class="menu"href="#contact">contact</a></li>
+</ul>
+    </nav>
       </div>
     </header>
     <main>
       <section id="home"class="main1">
         <div class="main-vitual">
-          <h1>MainVisual or Carousel</h1>
+          <h1>SMAILING</h1>
         </div>
       </section>
       <section id="feature" class="main2">
@@ -89,28 +92,30 @@
         <h1>CONTACT</h1>
       </div>
       <div class="Form">
+        <form method="POST" action="./check.php">
         <div class="Form-Item">
           <p class="Form-Item-Label">会社名</p>
-          <input type="text" class="Form-Item-Input" placeholder="例）株式会社令和">
+          <input type="text" name="firm"class="Form-Item-Input" placeholder="例）株式会社令和">
         </div>
         <div class="Form-Item">
           <p class="Form-Item-Label">氏名</p>
-          <input type="text" class="Form-Item-Input" placeholder="例）山田太郎">
+          <input type="text" name="name"class="Form-Item-Input" placeholder="例）山田太郎">
         </div>
         <div class="Form-Item">
           <p class="Form-Item-Label">電話番号</p>
-          <input type="text" class="Form-Item-Input" placeholder="例）000-0000-0000">
+          <input type="text" name="phone"class="Form-Item-Input" placeholder="例）000-0000-0000">
         </div>
         <div class="Form-Item">
           <p class="Form-Item-Label">メールアドレス</p>
-          <input type="email" class="Form-Item-Input" placeholder="例）example@gmail.com">
+          <input type="email" name="mail" class="Form-Item-Input" placeholder="例）example@gmail.com">
         </div>
         <div class="Form-Item">
           <p class="Form-Item-Label isMsg">お問い合わせ内容</p>
-          <textarea class="Form-Item-Textarea"></textarea>
+          <textarea name="comments"class="Form-Item-Textarea"></textarea>
         </div>
         <input type="submit" class="Form-Btn" value="送信する">
       </div>
+      </form>
       </section>
     </main>
     <footer></footer>
